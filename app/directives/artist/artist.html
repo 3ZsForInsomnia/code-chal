@@ -1,0 +1,13 @@
+<div class="artist">
+    <custom-image src="image"></custom-image>
+    <h3 class="artist__name">{{name}}</h3>
+    <div class="artist__info">
+        <div class="first-info artist__genres--spacing" ng-repear="genre in genres">
+            <span ng-repeat="genre in genres">{{genre}}, </span>
+        </div>
+        <div class="second-info">
+            <p class="artist__followers">Number of followers: {{followers}}</p>
+            <p class="artist__popularity">Popularity ranking: {{popularity}}
+        </div>
+    </div>
+</div>

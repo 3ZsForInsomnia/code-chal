@@ -1,0 +1,20 @@
+<div class="settings">
+    <button class="glyphicon glyphicon-plus settings__opener" ng-click="openSettings()"></button>
+    <div ng-if="areSettingsOpen" class="settings__menu-container">
+        <form class="settings__menu">
+            <div ng-repeat="setting in settings" class="settings__inputs">
+                <input type="radio" name="selected" value="{{setting}}" ng-model="selected" ng-change="onChange(selected)">{{setting}}
+            </div>
+        </form>
+        <div class="settings__view">
+            <div ng-show="option === 'Rename'">
+                Rename this playlist: <input name="rename" class="form-control" placeholder="name" type="text" ng-model="newName">
+                <button class="btn" ng-click="changeName(newName)">Save new name</button>
+                <span ng-if="invalidName" class="invalid">That name is already used!</span>
+            </div>
+            <div ng-show="option === 'Export'">
+                <textarea ng-model="exportString"></textarea>
+            </div>
+        </div>
+    </div>
+</div>

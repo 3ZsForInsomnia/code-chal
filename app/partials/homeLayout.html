@@ -1,0 +1,39 @@
+<div>
+    <h1>Home!</h1>
+    <p>This is a relatively useless start page - it will include some information on how things work and the architecture used.</p>
+    <p>There is this page, which doesn't really do much other than provide a landing spot. In the background as you hit this
+        page, the only controller, AppCtrl went and made some simple searches and uses the returned information to create
+        a few simple playlist objects. It is not necessary, but is a nice mechanism for providing mock data from a real API
+        endpoint, while giving me something tangible to explore with - an approach to developing new features I tend to like.</p>
+    <p>The architecture follows a pattern of a service acting as a single source of truth. It can be added to, removed from,
+        and modified, but only on its terms. Unfortunately I didn't really have time to *enforce* such rules as strictly
+        as I would like, but the basic architecture remains.
+    </p>
+    <p>As described in the comments within the app/services/Playlist.js file, all data is provided through the PlaylistService.
+        This is deliberate, as it forces all changes, and updates in reaction to those changes, to happen in a linear fashion.
+        No entity (another directive, service or controller) may/should be able to grab or modify state as they wish.
+    </p>
+    <p>Instead, entities honoring the PlaylistService must request the item they wish to see, and display what is given to them.
+        It is this display that the user can interact with, and interactions that cause state changes are *not* handled by
+        the displaying entity. Rather, the entity makes its request for an update to state to the PlaylistService, which
+        has some number of predefined actions that it makes available. In this approach, such actions typically are opaque
+        to the calling entity - the calling entity provides the data it would like to be used, and a reference to the object
+        it is to be used on, and dispatches the action/calls the appropriate method. The PlaylistService then makes the change
+        and alerts the appropriate ("subscribing") entities of the change after it is complete.
+    </p>
+    <p>If you are familiar with it, the tl;dr option of the above is that I was trying to use the PlaylistService as the store
+        like in redux systems.
+    </p>
+    <p>Had I more time, I would have tried to use <a href="https://github.com/Reactive-Extensions/rx.angular.js/">
+        RxJS for AngularJS</a> but that is an experiment for another day. Beyond obvious gaps like documentation and unit
+        tests, I was also hoping to bring in SCSS, however I can just describe my process with that separately. I also rather
+        wished this site wasn't *quite* such an eyesore, but, I am not a designer for a reason.
+    </p>
+    <p>I would like to further discuss architecture and development points in this project if that is a possibility. There are
+        a variety of things I would have done differently with more time as well as features I would have added.
+    </p>
+    <p>Lastly, thank you for providing me with this challenge! It was quite a bit of fun trying to see just how much AngularJS
+        I remembered and could re-figure out. I hope the result is satisfactory.
+    </p>
+    <p>Zachary Levine</p>
+</div>

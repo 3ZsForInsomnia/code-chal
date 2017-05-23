@@ -1,0 +1,27 @@
+<div>
+    <div class="playlist">
+        <custom-image src="image" type="'playlist'" name="name"></custom-image>
+        <div class="playlist__name">
+            <p class="name__header normalized">Playlist Title</p>
+            <h2 class="normalized name__text">{{name}}</h2>
+        </div>
+        <div class="playlist__songs">
+            <div class="see-more-songs">
+                <button class="btn more-songs-button" ng-click="expandSongs()" ng-if="songCount > 0">
+                    See {{songCount}} songs in this playlist</button>
+                <span class="btn more-songs-button" ng-if="songCount === 0">Add Some Songs!</span>
+            </div>
+        </div>
+        <div class="playlist__note">
+            <note note="note" name="name"></note>
+        </div>
+        <div class="playlist__settings">
+            <playlist-settings name="name"></playlist-settings>
+        </div>
+    </div>
+    <div ng-if="areSongsExpanded" class="playlist__songs--expanded">
+        <div ng-repeat="song in songs">
+            <content-item content="song"></content-item>
+        </div>
+    </div>
+</div>

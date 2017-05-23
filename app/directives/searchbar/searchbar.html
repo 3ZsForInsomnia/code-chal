@@ -1,0 +1,22 @@
+<section class="search">
+  <h2 class="search__header">Search for music!</h2>
+  <form name="search">
+    <div>
+      <input name="string" class="form-control text search__input" type="text"
+        placeholder="Enter your search here" ng-model="searchValues.string" ng-class="{'search--invalid': invalidSearchString}">
+    </div>
+    <div>
+      <span>Required: Choose a type of search</span>
+      <select name="type" class="search__type" ng-model="searchValues.type" 
+              class="custom-select"
+              ng-class="{'search--invalid': invalidSearchType}">
+        <option class="search__option" value="track">Songs</option>
+        <option class="search__option" value="album">Albums</option>
+        <option class="search__option" value="artist">Artists</option>
+      </select>
+    </div>
+    <div class="search__submit">
+      <input class="btn" type="submit" ng-click="search(searchValues)">
+    </div>
+  </form>
+</section>

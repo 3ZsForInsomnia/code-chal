@@ -1,0 +1,5 @@
+<div class="playlist new-playlist">
+    <textarea class="form-control new-playlist__name" ng-model="name"></textarea>
+    <button class="new-playlist__save btn" ng-click="createNewPlaylist(name)">Create New Playlist</button>
+    <span class="invalid" ng-if="failedAddition">A playlist with that name already exists! Try again.</span>
+</div>

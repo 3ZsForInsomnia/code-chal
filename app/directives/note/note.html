@@ -1,0 +1,11 @@
+<div>
+    <div class="note__text-container" ng-if="!isNoteExpanded">
+        <span ng-if="note !== ''" class="note__text">{{note | textOverflowFilter}}</span>
+        <span ng-if="note === ''" class="note__text">Add some text here! It will be glorious!</span>
+        <button class="note__edit btn" ng-click="expandNote()">Edit Note</button>
+    </div>
+    <div class="note__text-container--expanded" ng-if="isNoteExpanded">
+        <textarea class="form-control note__input" ng-model="text"></textarea>
+        <button class="note__edit btn" ng-click="saveNote(text)">Save Note</button>
+    </div>
+</div>

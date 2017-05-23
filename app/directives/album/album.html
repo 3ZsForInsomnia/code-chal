@@ -1,0 +1,8 @@
+<div class="album">
+    <custom-image src="image"></custom-image>
+    <h3 class="album__name">{{data.name}}</h3>
+    <div class="album__info">
+        <p ng-if="type === 'single'" class="album__artist">A single by {{artist}}</p>
+        <p ng-if="type === 'album'" class="album__artist">An album by {{artist}}</p>
+    </div>
+</div>

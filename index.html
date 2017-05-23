@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-framework="angularjs">
+
+<head>
+  <meta charset="utf-8">
+  <title>Code Challenge</title>
+  <style></style>
+  <link rel="stylesheet" href="app/app.css">
+  <!--Giant Bootstrap CDN link-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <!--Node imports-->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.js"></script>
+    
+    <!--App.js-->
+    <script src="app/app.js"></script>
+    
+    <!--Controllers-->
+    <script src="app/controllers/appController.js"></script>
+    
+    <!--Services-->
+    <script src="app/services/playlistService.js"></script>
+    <script src="app/services/spotifyService.js"></script>
+    
+    <!--Filters-->
+    <script src="app/common/durationFilter.js"></script>
+    <script src="app/common/textOverflowFilter.js"></script>
+    
+    <!--Directives-->
+    <script src="app/directives/album/album-directive.js"></script>
+    <script src="app/directives/artist/artist-directive.js"></script>
+    <script src="app/directives/customImage/customImage-directive.js"></script>
+    <script src="app/directives/contentItem/contentItem-directive.js"></script>
+    <script src="app/directives/nav/nav-directive.js"></script>
+    <script src="app/directives/note/note-directive.js"></script>
+    <script src="app/directives/newPlaylist/newPlaylist-directive.js"></script>
+    <script src="app/directives/playlist/playlist-directive.js"></script>
+    <script src="app/directives/playlistInteractions/playlistInteractions-directive.js"></script>
+    <script src="app/directives/playlistList/playlistList-directive.js"></script>
+    <script src="app/directives/playlistSettings/playlistSettings-directive.js"></script>
+    <script src="app/directives/searchbar/searchbar-directive.js"></script>
+    <script src="app/directives/searchresults/searchresults-directive.js"></script>
+    <script src="app/directives/song/song-directive.js"></script>
+</head>
+
+<body ng-app="app">
+  <div ng-controller="AppCtrl">
+    <!--Basic layout/items shared by all pages-->
+    <ng-include src="'app/partials/layout.html'"></ng-include>
+    <div class="view">
+      <ng-view></ng-view>
+    </div>
+  </div>
+</body>
+
+</html>

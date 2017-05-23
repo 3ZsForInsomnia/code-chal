@@ -1,0 +1,17 @@
+<div class="song">
+    <custom-image src="image"></custom-image>
+    <h3 class="song__name">{{name}}</h3>
+    <div class="song__info">
+        <div class="first-info">
+            <p class="song__artist">{{artist}}</p>
+            <p class="song__album">{{album}}</p>
+        </div>
+        <div class="second-info">
+            <p class="song__duration">{{duration | durationFilter}}</p>
+            <p class="song__popularity">Popularity ranking: {{popularity}}
+        </div>
+    </div>
+    <div class="song__playlist-interactions">
+        <playlist-interactions data="data"></playlist-interactions>
+    </div>
+</div>

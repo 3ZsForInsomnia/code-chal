@@ -1,0 +1,8 @@
+<div class="interactions">
+    <button class="btn" ng-click="addToPlaylist(selected)">Add to playlist</button>
+    <select ng-model="selected">
+        <option ng-repeat="name in playlistNames" value="{{name}}">{{name}}</option>
+    </select>
+    <span class="invalid" ng-if="invalidPlaylist">Sorry, that was not a valid playlist somehow</span>
+    <span class="invalid" ng-if="failedToAdd">The song was unable to be added to the playlist</span>
+</div>

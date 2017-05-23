@@ -1,0 +1,20 @@
+<div ng-switch="content.type">
+    <div ng-switch-when="track">
+        <div ng-if="content.type === 'track'">
+            <song data="content"></song>
+        </div>
+    </div>
+    <div ng-switch-when="album">
+        <div ng-if="content.type === 'album'">
+            <album data="content"></album>
+        </div>
+    </div>
+    <div ng-switch-when="artist">
+        <div ng-if="content.type === 'artist'">
+            <artist data="content"></artist>
+        </div>
+    </div>
+    <div ng-switch-default>
+        <span>Failed to determine this content item's nature. Ah well.</span>
+    </div>
+</div>

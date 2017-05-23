@@ -1,0 +1,10 @@
+<div>
+    <h2 ng-if="searchedFor !== ''">Showing {{searchType}} results for {{searchedFor}}</h2>
+    <h2 ng-if="!searchedFor">Waiting for user input...</h2>
+    <p ng-if="!successfulSearch">
+        Nothing was returned for this search, or an error was thrown by the API.
+    </p>
+    <div ng-repeat="item in items">
+        <content-item content="item"></content-item>
+    </div>
+</div>
